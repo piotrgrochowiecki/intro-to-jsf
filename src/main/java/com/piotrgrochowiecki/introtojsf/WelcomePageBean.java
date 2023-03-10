@@ -33,6 +33,6 @@ public class WelcomePageBean {
 
     public String navigateToFlashPage() {
         FacesContext.getCurrentInstance().getExternalContext().getFlash().put("transmittedVariable", "Piotr sent this");
-        return "flashscope.xhtml";
+        return "flashscope.xhtml?faces-redirect=true";
     }
 }
