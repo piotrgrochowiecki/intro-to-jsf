@@ -11,6 +11,7 @@
 <h:body>
     <f:metadata>
         <f:viewParam id="guest" value="#{welcomePageBean.welcomeUserName}" required="#{!facesContext.postback}" requiredMessage="Please provide a guest name" maxlength="25" name="guest"/>
+        <f:viewAction action="#{welcomePageBean.sayHello}"/>
     </f:metadata>
     <h:form>
         <h:panelGrid columns="2">
