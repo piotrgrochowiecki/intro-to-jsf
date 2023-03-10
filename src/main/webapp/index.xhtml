@@ -16,7 +16,7 @@
     <h:form>
         <h:panelGrid columns="2">
             <h:outputLabel for="inputTextBox" value="Enter a name here" />
-            <h:inputText value="#{welcomePageBean.welcomeUserName}" id="inputTextBox"/>
+            <h:inputText value="#{welcomePageBean.welcomeUserName}" id="inputTextBox" rendered="false"/>
             <h:commandButton value="Say Hello" action="#{welcomePageBean.sayHello}"/>
             <h:outputText value="#{welcomePageBean.completedGreeting}"/>
             <h:commandButton value="Navigate!" action="#{welcomePageBean.navigateToFlashPage}"/>
