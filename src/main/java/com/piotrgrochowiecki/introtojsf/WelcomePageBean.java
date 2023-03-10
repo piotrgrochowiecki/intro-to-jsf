@@ -1,6 +1,7 @@
 package com.piotrgrochowiecki.introtojsf;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 
 @Named("welcomePageBean")
@@ -28,5 +29,10 @@ public class WelcomePageBean {
 
     public void sayHello() {
         completedGreeting = "Hello, " + welcomeUserName;
+    }
+
+    public String navigateToFlashPage() {
+        FacesContext.getCurrentInstance().getExternalContext().getFlash().put("transmittedVariable", "Piotr sent this");
+        return "flashscope.xhtml";
     }
 }
