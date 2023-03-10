@@ -9,6 +9,9 @@
     <title>My First Java EE app</title>
 </h:head>
 <h:body>
+    <f:metadata>
+        <f:viewParam id="guest" value="#{welcomePageBean.welcomeUserName}" required="#{!facesContext.postback}" requiredMessage="Please provide a guest name" maxlength="25" name="guest"/>
+    </f:metadata>
     <h:form>
         <h:panelGrid columns="2">
             <h:outputLabel for="inputTextBox" value="Enter a name here" />
@@ -18,5 +21,6 @@
             <h:commandButton value="Navigate!" action="#{welcomePageBean.navigateToFlashPage}"/>
         </h:panelGrid>
     </h:form>
+    <h:message for="guest"/>
 </h:body>
 </html>
