@@ -15,6 +15,30 @@
          <h:inputSecret/>
          <h:outputLabel value="This is a text area"/>
          <h:inputTextarea cols="8" rows="10"/>
+
+         <h:outputLabel value="This is a selectOneRadio"/>
+         <h:selectOneRadio value="#{componentListing.selectOneRadioSelection}">
+            <f:selectItem noSelectionOption="true" itemLabel="--Please select a dessert--"/>
+            <f:selectItems value="#{dessertDao.desserts}" var="dessert" itemLabel="#{dessert.name}" itemDescription="#{dessert.name}" itemValue="#{dessert.id}"/>
+         </h:selectOneRadio>
+
+         <h:outputLabel value="This is a selectOneMenu"/>
+         <h:selectOneMenu value="#{componentListing.selectOneMenuSelection}">
+            <f:selectItem noSelectionOption="true" itemLabel="--Please select a dessert--"/>
+            <f:selectItems value="#{dessertDao.desserts}" var="dessert" itemLabel="#{dessert.name}" itemDescription="#{dessert.name}" itemValue="#{dessert.id}"/>
+         </h:selectOneMenu>
+
+         <h:outputLabel value="This is a selectOneListBox"/>
+         <h:selectOneListbox value="#{componentListing.selectListBoxSelection}">
+            <f:selectItem noSelectionOption="true" itemLabel="--Please select a dessert--"/>
+            <f:selectItems value="#{dessertDao.desserts}" var="dessert" itemLabel="#{dessert.name}" itemDescription="#{dessert.name}" itemValue="#{dessert.id}"/>
+         </h:selectOneListbox>
+
+         <h:outputLabel value="This is a selectManyCheckbox"/>
+         <h:selectManyCheckbox value="#{componentListing.selectManyDesserts}">
+            <f:selectItem noSelectionOption="true" itemLabel="--Please select a dessert--"/>
+            <f:selectItems value="#{dessertDao.desserts}" var="dessert" itemLabel="#{dessert.name}" itemDescription="#{dessert.name}" itemValue="#{dessert.id}"/>
+         </h:selectManyCheckbox>
       </h:panelGrid>
    </h:form>
 </h:body>
