@@ -16,8 +16,12 @@
       <h:outputText value="From output text 2"/>
    </h:panelGrid>
 
-   <h:panelGroup id="our group">
-      <h:outputText value="This is in panel group."/>
+   <h:panelGroup id="ourGroup">
+      <h:outputText value="This is in panel group."/><br/>
    </h:panelGroup>
+
+   <ui:repeat value="#{['Corgi', 'Dalmation', 'hound']}" var="dog">
+      <h:outputText value="#{dog}"/><br/>
+   </ui:repeat>
 </h:body>
 </html>
