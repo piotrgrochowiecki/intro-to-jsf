@@ -14,10 +14,13 @@
 <!--        in required attribute we specified true value only if page is loaded for the first time, not refreshed-->
         <f:viewAction action="#{welcomePageBean.sayHello}"/>
     </f:metadata>
-    <h:form>
+    <h:form prependId="false">
         <h:panelGrid columns="2">
             <h:outputLabel for="inputTextBox" value="Enter a name here" />
-            <h:inputText value="#{welcomePageBean.welcomeUserName}" id="inputTextBox" rendered="false"/>
+            <h:panelGrid columns="2">
+                <h:inputText value="#{welcomePageBean.welcomeUserName}" id="inputTextBox" rendered="false"/>
+                <h:message for="inputTextBox" showDetail="true" showSummary="true"/>
+            </h:panelGrid>
             <h:commandButton value="Say Hello" action="#{welcomePageBean.sayHello}"/>
             <h:outputText value="#{welcomePageBean.completedGreeting}"/>
             <h:commandButton value="Navigate!" action="#{welcomePageBean.navigateToFlashPage}"/>

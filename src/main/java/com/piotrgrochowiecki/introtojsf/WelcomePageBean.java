@@ -1,6 +1,7 @@
 package com.piotrgrochowiecki.introtojsf;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -33,6 +34,8 @@ public class WelcomePageBean {
 
     public void sayHello() {
         completedGreeting = "Hello, " + welcomeUserName;
+        FacesMessage messageToQ = new FacesMessage(FacesMessage.SEVERITY_INFO, completedGreeting, "We're so happy to see you");
+        FacesContext.getCurrentInstance().addMessage("inputTextBox", messageToQ);
     }
 
     public String navigateToFlashPage() {
