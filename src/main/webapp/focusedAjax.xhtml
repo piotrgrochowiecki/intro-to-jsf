@@ -9,7 +9,7 @@
    <h:form prependId="false">
       <h:outputLabel value="Say something: "/>
       <h:inputText id="inputValue" value="#{ajaxBean.theInputValue}">
-         <f:ajax render="outputValue" event="keyup" execute="inputValue"/>
+         <f:ajax render="@form" execute="@this"/>
       </h:inputText><br/>
       <h:outputLabel value="What you are saying is: "/>
       <h:outputText id="outputValue" value="#{ajaxBean.theInputValue}"/>
