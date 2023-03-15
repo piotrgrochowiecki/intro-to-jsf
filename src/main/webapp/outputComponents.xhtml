@@ -20,7 +20,7 @@
       <h:outputText value="This is in panel group."/><br/>
    </h:panelGroup>
 
-   <ui:repeat value="#{['Corgi', 'Dalmation', 'hound']}" var="dog">
+   <ui:repeat value="#{['Corgi', 'Dalmation', 'hound'].stream().filter(dogBreed -> dogBreed.startsWith('C')).toList()}" var="dog">
       <h:outputText value="#{dog}"/><br/>
    </ui:repeat>
 
