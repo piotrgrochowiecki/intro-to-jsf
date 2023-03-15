@@ -41,9 +41,15 @@
          </h:selectManyCheckbox>
 
          <h:outputLabel value="This is a command button"/>
-         <h:commandButton value="Pass a parameter" action="#{componentListing.acceptString('A JSF Tutorial')}" /><br/>
-         <h:outputLabel value="This is a cookie object:"/>
-         #{cookie}
+         <h:commandButton value="Pass a parameter" action="#{componentListing.acceptString('A JSF Tutorial')}" />
+<!--         <h:outputLabel value="This is a cookie object:"/>-->
+<!--         #{cookie}-->
+
+         <h:outputLabel value="This is money input (BigDecimal)"/>
+         <h:inputText value="#{componentListing.moneyInput}" converterMessage="We couldn't do that!" converter="jakarta.faces.BigDecimal" id="bigDecimalInput"/>
+         <h:message for="bigDecimalInput"/>
+         <h:outputLabel value="This is money output (BigDecimal)"/>
+         <h:outputText value="#{componentListing.moneyInput}" converter="jakarta.faces.BigDecimal" id="bigDecimalOutput"/>
       </h:panelGrid>
    </h:form>
 </h:body>
