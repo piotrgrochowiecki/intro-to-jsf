@@ -15,9 +15,13 @@
    <h:form>
       <h:panelGrid columns="2">
           <h:outputLabel value="Our HTML5 DatePicker"/>
-          <input type="datetime-local" jsf:id="dateTimeComponent" jsf:value="#{html5bean.dateIn}"/>
+          <input type="date" jsf:id="dateTimeComponent" jsf:value="#{html5bean.dateObjectIn}">
+              <f:convertDateTime pattern="YYYY-MM-dd" type="date"/>
+          </input>
           <h:commandButton value="Save Date" action="#{html5bean.transformDates}"/>
-          <h:outputText value="#{html5bean.dateOut}"/>
+          <h:outputText value="#{html5bean.dateObjectIn}">
+              <f:convertDateTime dateStyle="full"/>
+          </h:outputText>
           <h:outputLabel value="Our Pass-Through Attribute"/>
           <h:inputText p:placeholder="This is out placeholder in input text window!!!"/>
       </h:panelGrid>
