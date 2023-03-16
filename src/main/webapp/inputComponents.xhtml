@@ -17,9 +17,9 @@
          <h:inputTextarea cols="8" rows="10"/>
 
          <h:outputLabel value="This is a selectOneRadio"/>
-         <h:selectOneRadio value="#{componentListing.selectOneRadioSelection}">
+         <h:selectOneRadio value="#{componentListing.selectedDessert}" converter="#{dessertConverter}">
             <f:selectItem noSelectionOption="true" itemLabel="--Please select a dessert--"/>
-            <f:selectItems value="#{dessertDao.desserts}" var="dessert" itemLabel="#{dessert.name}" itemDescription="#{dessert.name}" itemValue="#{dessert.id}"/>
+            <f:selectItems value="#{dessertDao.desserts}" var="dessert" itemLabel="#{dessert.name}" itemDescription="#{dessert.name}" itemValue="#{dessert}"/>
          </h:selectOneRadio>
 
          <h:outputLabel value="This is a selectOneMenu"/>
@@ -50,6 +50,10 @@
          <h:message for="bigDecimalInput"/>
          <h:outputLabel value="This is money output (BigDecimal)"/>
          <h:outputText value="#{componentListing.moneyInput}" converter="jakarta.faces.BigDecimal" id="bigDecimalOutput"/>
+
+         <h:outputText value="#{componentListing.selectedDessert}" converter="#{dessertConverter}"/>
+         <h:outputLabel value="Submit this form"/>
+         <h:commandButton value="Submit"/>
       </h:panelGrid>
    </h:form>
 </h:body>
